@@ -210,7 +210,7 @@ const help = (prefix) => {
 ┣➥ *${prefix}DLL*
 ┃
 ┣━━━━━━━━━━━━━━━━━━━━
-┃ *${prefix}POWERED BY YUKINIKO*
+┃ Support Wa.me/+5562984737707
 ┗━━━━━━━━━━━━━━━━━━━━`
 }
 exports.help = help
