@@ -27,8 +27,8 @@ const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const vcard = 'BEGIN:VCARD\n' // ANAK ANJING MAU NGAPAIN?
             + 'VERSION:3.0\n' // NGAPAIN LAGI KALO GA MAU NUMPANG NAMA DOANG XIXIXIXI
             + 'FN:CO YUKINIKO\n' // MENDING LU TOBAT SU!
-            + 'ORG:Creator YUKINIKO;\n' // KASIH CREDITS GUA SU!!!
-            + 'TEL;type=CELL;type=VOICE;waid=6287720646259:+62 877-2064-6259\n' // JANGAN KEK BABI SU
+            + 'ORG:Creator ITACHIN;\n' // KASIH CREDITS GUA SU!!!
+            + 'TEL;type=CELL;type=VOICE;waid=5573981044096:+55 7398104-4096\n' // NÃO KEK BABI SU
             + 'END:VCARD'
 prefix = '.'
 blocked = []
@@ -124,18 +124,18 @@ async function starts() {
 			client.chatRead (from)
 
 			mess = {
-				wait: '⌛ em processo ⌛',
-				success: '✔️ foi bem sucedido ✔️',
+				wait: '⌛ calma ai macaco ⌛',
+				successo ✔️pronto cabeça de pika✔️',
 				error: {
 					stick: '❌ falhou, algo deu errado ao converter imagens para sticker ❌',
 					Iv: '❌ Link inválido ❌'
 				},
 				only: {
 					group: '❌ este comando só pode ser usado em grupo! ❌',
-					ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-					ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
-					admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
-					Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
+					ownerG: '❌ Este comando só pode ser usado por grupo proprietário! ❌',
+					ownerB: '❌ Este comando só pode ser usado pelo bot proprietário! ❌ ',
+					admin: '❌ Este comando só pode ser usado por administradores de grupo! ❌ ',
+					Badmin: '❌ Este comando só pode ser usado quando o bot se torna administrador! ❌'
 				}
 			}
 
@@ -195,7 +195,7 @@ async function starts() {
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 				case 'blocklist':
-					teks = 'This is list of blocked number :\n'
+					teks = 'Esta é a lista de números bloqueados: \ n'
 					for (let block of blocked) {
 						teks += `~> @${block.split('@')[0]}\n`
 					}
@@ -217,7 +217,7 @@ async function starts() {
 								fs.unlinkSync(media)
 							})
 					} else {
-						reply('Foto aja mas')
+						reply('Apenas uma foto ')
 					}
 					break
 				case 'stiker':
@@ -260,7 +260,7 @@ async function starts() {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+								reply(`❌ Falha ao converter ${prefix} ke stiker`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -315,12 +315,12 @@ async function starts() {
 							.toFormat('webp')
 							.save(ran)*/
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
-					}
+						reply(`Envie uma imagem com um adesivo de legenda $ {prefix} ou uma tag de imagem que foi enviada`)
+}
 					break
 			case 'owner':
                  client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                 client.sendMessage(from, 'itu pacar ku eh owner ku ><',MessageType.text, { quoted: mek} )
+                 client.sendMessage(from, 'essa é minha namorada eh dona ku ><',MessageType.text, { quoted: mek} )
                  break
                  case 'fitnah':	
 				case 'fake':          
@@ -332,7 +332,7 @@ async function starts() {
                     costum(pesan, isi, pesan2)
                     break
                 case 'fakereplay':
-                   client.reply(from, 'ange mas', 'mending lari', "5573981054006")
+                   client.reply(from, 'ange mas ',' remendando ', "5573981054006")
                    break
                 case 'but':
                     client.reply(from, 'asw', Message.Type.text)
@@ -422,7 +422,7 @@ async function starts() {
 					client.sendMessage(from, buffer, image, {caption: 'Nih anjim', quoted: mek})
 					break
 				case 'galaxtext':
-					if (args.length < 1) return reply('mau apa om')
+					if (args.length < 1) return reply('O que voce quer, tio')
 					teks = body.slice(12)
 					if (teks.length > 8) return reply('Teksnya kepanjangan, maksimal 8 karakter')
 					reply(mess.wait)
@@ -433,7 +433,7 @@ async function starts() {
 					var gh = body.slice(10)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
-					if (args.length < 1) return reply('Teksnya mana um')
+					if (args.length < 1) return reply('Cadê o texto, hum')
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
@@ -509,7 +509,7 @@ async function starts() {
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: ' '+thun})
 					break
                 case 'stiltext':
-                      if (args.length < 1) return reply('Teks nya mana?')
+                      if (args.length < 1) return reply('Cadê o texto?')
                       gh = body.slice(11)
                       gl1 = gh.split("|")[0];
                       gl2 = gh.split("|")[1];
@@ -521,7 +521,7 @@ async function starts() {
 					var gh = body.slice(9)
 					coli1 = gh.split("|")[0];
 					coli2 = gh.split("|")[1];
-					if (args.length < 1) return reply('Teks nya mana?')
+					if (args.length < 1) return reply('Cadê o texto?')
 					reply(mess.wait)
 					buffer = await getBuffer(`https://zeksapi.herokuapp.com/api/watercolour?text1=${coli1}&text2=${coli2}&apikey=xptnbot352`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -536,7 +536,7 @@ async function starts() {
 					client.sendMessage(from, party, image, {quoted: mek})
 					break
                 case 'ninjalogo':
-                      if (args.length < 1) return reply('Teks nya mana?')
+                      if (args.length < 1) return reply('Cadê o texto?')
                       gh = body.slice(11)
                       gl1 = gh.split("|")[0];
                       gl2 = gh.split("|")[1];
@@ -626,7 +626,7 @@ async function starts() {
 					client.sendMessage(from, buff, image, {quoted: mek})
 					break
                 case 'wolflogo':
-                      if (args.length < 1) return reply('Teks nya mana?')
+                      if (args.length < 1) return reply('Onde está o texto?')
                       gh = body.slice(9)
                       gl1 = gh.split("|")[0];
                       gl2 = gh.split("|")[1];
@@ -762,7 +762,7 @@ async function starts() {
 					break
                 case 'donasi':
 				case 'donate':
-					client.sendMessage(from, 'Mau donasi ya om?✨\n\n اتَّقوا النَّارَ ولو بشقِّ تمرةٍ ، فمن لم يجِدْ فبكلمةٍ طيِّبةٍ\n_“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). Jika kamu tidak punya, maka bisa dengan kalimah thayyibah” [HR. Bukhari 6539, Muslim 1016]_\n\n*Pulsa XL :* _0877-2064-6259_\n*Dana :* _0877-2064-6259_\n*TRAKTEER :* _https://trakteer.id/yukiniko\n*Gopay :* _0877-2064-6259_\n*OVO :* _0877-2064-6259_', text, { quoted: mek })
+					client.sendMessage(from, 'Você quer doar? ✨ \ n \ n اتَّقوا النَّارَ ولو بشقِّ تمرةٍ ، فمن لم يجِدْ فبكلمةٍ طيِّبةٍ\n_“jauhilah api neraka, walau hanya dengan bersedekah sebiji kurma (sedikit). Jika kamu tidak punya, maka bisa dengan kalimah thayyibah” [HR. Bukhari 6539, Muslim 1016]_\n\n*Pulsa XL :* _0877-2064-6259_\n*Dana :* _0877-2064-6259_\n*TRAKTEER :* _https://trakteer.id/yukiniko\n*Gopay :* _0877-2064-6259_\n*OVO :* _0877-2064-6259_', text, { quoted: mek })
 					break
                 case 'tes':
                    client.sendMessage(from, 'ok', text, {quoted: mek})
@@ -801,20 +801,20 @@ async function starts() {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6287720646259@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
+                    client.sendMessage('5573981044096@s.whatsapp.net', options, text, {quoted: mek})
+                    reply('O problema foi relatado ao proprietário do BOT,  palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'request':
                      const cfrr = body.slice(8)
                       if (cfrr.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
                         var nomor = mek.participant
-                       const ress = `*[REQUEST VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
+                       const ress = `*[SOLICITAR VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
 
                       var options = {
                          text: ress,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6287720646259@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('5573981044096@s.whatsapp.net', options, text, {quoted: mek})
                     reply('REQUEST ANDA TELAH SAMPAI ke owner BOT, Requests palsu/main2 tidak akan ditanggapi.')
                     break
 				case 'meme':
@@ -850,7 +850,7 @@ async function starts() {
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Cintai nekonime'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
+						reply('❌ *ERRO* ❌')
 					}
 					break
 				case 'loli':
