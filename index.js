@@ -18,9 +18,9 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 
 const config = {
-    A187: '📍D4RKBOT📍',
+    A187: '📍IT4CHIBOT📍',
     instagram: 'OFF',
-    nomer: 'wa.me/21997123716',
+    nomer: 'wa.me/73981044096',
     aktif: '24 JAM',
     youtube: 'https://youtube.com/channel/UCRaC-6JyCW_iqbW1DbuXVxQ',
     whatsapp: 'https://chat.whatsapp.com/KTlC0MXi3WJChdQeps5flt',
@@ -787,7 +787,7 @@ case 'filmanime':
             if (isMedia) {
                 if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
                     const mediaData = await decryptMedia(message, uaOverride)
-                    client.reply(from, '[WAIT] Sedang di proses⏄1�71ￄ1�77 silahkan tunggu ± 1 min!', id)
+                    client.reply(from, '[ESPERE] Em andamento ⏄1�71ￄ1�77 por favor aguarde ± 1 min!', id)
                     const filename = `./media/aswu.${mimetype.split('/')[1]}`
                     await fs.writeFileSync(filename, mediaData)
                     await exec(`gify ${filename} ./media/output.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
@@ -795,7 +795,7 @@ case 'filmanime':
                         await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
                     })
                 } else (
-                    client.reply(from, '[❗] Kirim video dengan caption *!stickerGif* max 10 sec!', id)
+                    client.reply(from, '[❗] Envie um vídeo com uma legenda *!stickerGif* máx. 10 seg!', id)
                 )
             }
             break     
